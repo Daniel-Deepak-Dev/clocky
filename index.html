@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            background: url(./omg.jpg);
+        }
+
+        .main {
+            width: 400px;
+            height: 175px;
+            margin: 100px auto;
+            background: rgb(71, 71, 71);
+            position: relative;
+            padding: 30px;
+            border-radius: 5px;
+        }
+
+        .badge {
+            background: rgb(71, 71, 71);
+            width: 45%;
+            height: 20px;
+            margin: 0 auto;
+            position: absolute;
+            top: -10px;
+            left: 110px;
+            color: white;
+            padding: 0px 64px;
+            text-transform: uppercase;
+            font-family: 'Operator Mono';
+            border: 0.1px solid white;
+        }
+
+        .clock {
+            background: whitesmoke;
+            height: 115px;
+            padding: 17px 0px;
+            text-align: center;
+            border-radius: 5px;
+            font-family: 'Patrick Hand', 'Operator Mono';
+            font-size: 55px;
+            color: rgb(71, 71, 71);
+            position: relative;
+        }
+
+        #one {
+            width: 400px;
+            height: 175px;
+            margin: 100px auto;
+            background: rgb(71, 71, 71);
+            padding: 30px;
+            border-radius: 5px;
+        }
+
+        #two {
+            width: 400px;
+            height: 175px;
+            margin: 100px auto;
+            background: rgb(71, 71, 71);
+            padding: 30px;
+            border-radius: 5px;
+        }
+
+        .glitter {
+            text-shadow: 0 0 10px gold;
+
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand|Permanent+Marker|Ultra" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="badge">clocky</div>
+        <div class="clock">
+            <span id="hour"></span>
+            <span id="minute"></span>
+            <span id="second"></span>
+        </div>
+    </div>
+    <div>
+        <div id="one">"Time you enjoy wasting is not wasted time"</div>
+        <div id="two">"Time and train wait for none"</div>
+    </div>
+
+    <script>
+        var x = document.getElementById("one").style.display = "none";
+        var y = document.getElementById("two").style.display = "";
+
+        function quote() {
+
+
+
+            if (x == "") {
+                document.getElementById("one").style.display = "none";
+                document.getElementById("two").style.display = "";
+                console.log("time");
+            }
+            else {
+                document.getElementById("two").style.display = "none";
+                document.getElementById("one").style.display = "";
+                console.log("train");
+            }
+        }
+        setInterval(quote, 500);
+        function clock() {
+            var clocky = new Date();
+            var hour = clocky.getHours();
+            var minute = clocky.getMinutes();
+            var second = clocky.getSeconds();
+            if (hour < 10) {
+                hour = "0" + hour;
+            }
+            if (minute < 10) {
+                minute = "0" + minute;
+            } if (second < 10) {
+                second = "0" + second;
+            }
+            document.getElementById("hour").innerText = hour;
+            document.getElementById("minute").innerText = ": " + minute;
+            document.getElementById("second").innerText = ': ' + second;
+
+        }
+        setInterval(clock, 500)
+
+    </script>
+</body>
+
+</html>
